@@ -2,7 +2,24 @@
 Commands
 ==========
 
+git config
+-----------
 
+set user credentials
+
+either:
+    add ssh-key to repository (webinterface)
+
+or:
+
+```
+git config [--global] credential.helper "<helper> [<options>]"
+```
+
+helpers:
+    * cached 
+    * store
+    * <platform-specific>
 
 remotes
 --------

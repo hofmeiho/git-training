@@ -1,6 +1,65 @@
 
+---
+
+What ist git?
+===============
+
+* the most widely used modern version control system in the world today
+* originally developed in 2005 by Linus Torvalds
+
+* Distributed Version Control System (DVCS)
+
+
+---
+
+What is DVCS?
+===================
+
+Key Concepts
+-------------
+
+* Centralized version control systems (CVCS) focuses on synchronizing, tracking, and backing up files.
+* Distributed version control systems (DVCS) focuses on sharing changes; every change has a guid or unique id.
+* Recording/downloading and applying a change are separate steps (in a centralized system, they happen together).
+* Distributed systems have no forced structure. You can create “centrally administered” locations or keep everyone as peers.
+* DVCS new terminology
+    * Pushes refer to sending a change to another repository (permissions may be required)
+    * Pulls refer to grabbing a change from a repository
 
 --- 
+
+Advantages
+----------------
+
+* Everyone has their own local sandbox.
+* git works offline.
+* git is fast.
+* Branching and merging is easy.
+
+
+---
+
+Disadvantages
+--------------
+
+* You still need a backup.
+* You still want a machine to push changes.
+* There’s not really a “latest version”
+* There aren’t really revision numbers.
+
+--- 
+
+git Basics
+===========
+
+---
+
+---
+
+Work with remotes
+===================
+
+---
 
 clone repository 
 -----------------
@@ -9,8 +68,21 @@ clone repository
 
 $ git clone https://path/to/git-repository.git
 $ ls
-git-training
+git-repository
 
+```
+
+---
+
+set user credentials 
+--------------------
+
+either add ssh-key to repository (webinterace)
+
+or
+
+```
+git config [--global] credential.helper "<helper> [<options>]"
 ```
 
 ---
@@ -29,6 +101,7 @@ $ git push -u origin master
 get information about remotes 
 --------------------------------
 
+```
 $ git remote 
 origin
 $ git config --get remote.origin.url
@@ -45,4 +118,7 @@ $ git remote show origin
   Lokale Referenz konfiguriert für 'git push':
     master versendet nach master (aktuell)
 ```
+
 ---
+
+
