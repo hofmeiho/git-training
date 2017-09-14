@@ -13,9 +13,6 @@ What ist git?
 ---
 
 What is DVCS?
-===================
-
-Key Concepts
 -------------
 
 * Centralized version control systems (CVCS) focuses on synchronizing, tracking, and backing up files.
@@ -74,12 +71,14 @@ git-repository
 
 ---
 
-set user credentials 
+add user-credentials 
 --------------------
 
-either add ssh-key to repository (webinterace)
+** either **
 
-or
+add ssh-key to repository (webinterace)
+
+** or **
 
 ```
 git config [--global] credential.helper "<helper> [<options>]"
@@ -101,7 +100,7 @@ $ git push -u origin master
 get information about remotes 
 --------------------------------
 
-```
+```bash
 $ git remote 
 origin
 $ git config --get remote.origin.url
