@@ -9,7 +9,6 @@ What ist git?
 
 * Distributed Version Control System (DVCS)
 
-
 ---
 
 What is DVCS?
@@ -24,6 +23,15 @@ What is DVCS?
     * Pulls refer to grabbing a change from a repository
 
 --- 
+
+![CVCS_VS_DVCS](CVSvsDVCSFlowDiag.png)
+
+---
+
+![DVCS](centr-decentr.png)
+
+---
+
 
 Advantages
 ----------------
@@ -51,6 +59,129 @@ git Basics
 
 ---
 
+
+getting help
+-------------- 
+
+```shell
+
+$ git help log
+$ git log --help
+
+
+``` 
+
+setting up git user
+--------------------
+
+```shell
+
+$ git config --global user.name "Your Name Comes Here"
+$ git config --global user.email you@yourdomain.example.com
+
+```
+
+(not your git credentials)  
+
+---
+
+init new git repository
+-------------------------
+
+```shell
+
+$ cd /path/to/repo
+$ git init
+Initialisierte leeres Git-Repository in /path/to/repo/.git/
+
+```
+
+---
+
+check status 
+-----------------
+
+```shell
+
+$ git status
+Auf Branch master
+Ihr Branch ist auf dem selben Stand wie 'origin/master'.
+...
+
+```
+
+---
+
+add file(s) to git
+-----------------
+
+```shell
+
+$ touch file1 file2 file3
+$ # git add . 
+$ # git add *
+$ git add file1 file2 file3
+$ git status
+
+Auf Branch master
+
+Initialer Commit
+
+zum Commit vorgemerkte Änderungen:
+  (benutzen Sie "git rm --cached <Datei>..." zum Entfernen aus der Staging-Area)
+
+	neue Datei:     file1
+    neue Datei:     file2
+    neue Datei:     file3
+
+```
+
+---
+
+remove from staging area
+-------------------------
+
+```shell
+
+$ git rm --cached file1
+rm 'file1' 
+
+$ ls
+file1 file2 file3
+
+```
+--- 
+
+commiting changes 
+------------------
+
+add commit message 
+
+```shell
+
+$ git commit -m "my commit message"
+[master (Basis-Commit) 3074e91] my commit message
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1
+ create mode 100644 file2
+ create mode 100644 file3
+
+```
+
+---
+
+add commit message in editor
+
+ ```shell
+$ git config --global core.editor nano
+$ #or ($VISUAL or $EDITOR)
+$ git config core.editor  
+nano
+$ git commit
+
+```
+
+---
 
 History
 ==========
