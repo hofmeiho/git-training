@@ -137,6 +137,7 @@ zum Commit vorgemerkte Änderungen:
     neue Datei:     file3
 
 ```
+---
 
 adding files interactive
 -------------------------
@@ -230,7 +231,9 @@ nothing to commit, working directory clean
 
 ```
 
-reapply stashes
+---
+
+(re)apply stashes
 
 ```shell
 $ git stash list
@@ -275,6 +278,7 @@ Branching and Merging
 --- 
 
 create branch
+---------------
 
 ```shell
 
@@ -381,6 +385,7 @@ commit 933c51027acf9956c6e02950e92af72e277200b1
 Author: Florian Schimmer <florian.schimmer@conplement.de>
 ...
 ```
+---
 
 tags 
 ------
@@ -394,13 +399,12 @@ $ git tag
 versions 
 ---------------
 
+```
 HEAD - newest commit in actual branch
-
 HEAD^ - parent of head
-
 HEAD^^ - grandparent of head
-
 HEAD~4 - great-great grandparent of HEAD
+```
 
 ---
 
@@ -507,6 +511,8 @@ $ #Looks for a line that has NODE or Unexpected in files that have lines that ma
 $ git grep --all-match -e NODE -e Unexpected
 
 ```
+
+---
 
 cherry picking
 ---------------
@@ -626,6 +632,9 @@ git flow vs github flow
 ---
 
 ![gitflow](gitflow.png)
+
+---
+
 ![githubflow](githubflow.png)
 
 ---
@@ -640,3 +649,6 @@ The main concepts behind the Github flow are:
 * Once it is merged and pushed to ‘master’, you can and should deploy immediately
 
 ---
+
+Thank you for your attention :) 
+===============================
