@@ -51,6 +51,158 @@ git Basics
 
 ---
 
+
+History
+==========
+
+---
+
+commit ids
+------------
+
+```
+$ git log
+commit 933c51027acf9956c6e02950e92af72e277200b1
+Author: Florian Schimmer <florian.schimmer@conplement.de>
+...
+```
+
+tags 
+------
+
+
+
+---
+
+
+HEAD versions 
+---------------
+
+HEAD - 
+HEAD^ - parent of head
+HEAD^^ - grandparent of head
+HEAD~4 - great-great grandparent of HEAD
+
+---
+
+Tags
+----------
+
+---
+
+Branching and Merging
+=====================
+
+--- 
+
+create branch
+
+```shell
+
+$ git branch branch1
+$ git branch  
+  branch1
+* master
+$ git checkout branch1
+$ git branch
+* branch1
+  master
+
+```
+
+---
+
+create branch and checkout 
+---------------------------
+
+```shell
+
+$ git checkout -b branch2
+Zu neuem Branch 'branch2' gewechselt
+$ git branch
+  branch1
+* branch2
+  master
+```
+---
+
+delete local branch 
+--------------------
+
+```shell 
+
+$ git branch -d branch1
+$ git branch
+* branch2
+  master
+
+```
+---
+
+rename branch
+--------------
+
+```shell
+
+$ git branch -m branch2 branch1
+$ git branch 
+* branch1
+  master
+```
+
+----
+
+merging branches 
+------------------
+
+```
+$ git checkout master # switch to master branch
+$ git merge branch1
+Aktualisiere 933c510..c4c9e2f
+Fast-forward
+ file1 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1
+```
+
+---
+
+Exploring history 
+==================
+
+---
+
+print commits
+-------------------
+
+```shell
+$ git log
+commit 933c51027acf9956c6e02950e92af72e277200b1
+Author: Florian Schimmer <florian.schimmer@conplement.de>
+Date:   Thu Sep 14 16:20:30 2017 +0200
+
+    initial commit
+```
+---
+
+print more informations about a commit 
+--------------------------------------
+
+```shell
+$ git show 933c51027acf9956c6e02950e92af72e277200b1
+commit 933c51027acf9956c6e02950e92af72e277200b1
+Author: Florian Schimmer <florian.schimmer@conplement.de>
+Date:   Thu Sep 14 16:20:30 2017 +0200
+
+    initial commit
+
+diff --git a/myfile.txt b/myfile.txt
+new file mode 100644
+index 0000000..e69de29
+```
+---
+
+
 ---
 
 Work with remotes
@@ -61,7 +213,7 @@ Work with remotes
 clone repository 
 -----------------
 
-```bash
+```shell
 
 $ git clone https://path/to/git-repository.git
 $ ls
@@ -89,7 +241,7 @@ git config [--global] credential.helper "<helper> [<options>]"
 add remote and push local repository 
 --------------------------------------
 
-```bash
+```shell
 
 $ git remote add origin https://path/to/git-repository.git
 $ git push -u origin master 
@@ -100,22 +252,45 @@ $ git push -u origin master
 get information about remotes 
 --------------------------------
 
-```bash
+```shell
 $ git remote 
 origin
 $ git config --get remote.origin.url
-https://path/to/git-repository.git
+|https://path/to/git-repository.git
 $ git remote show origin
 * Remote-Repository origin
   URL zum Abholen: https://path/to/git-repository.git
   URL zum Versenden: https://path/to/git-repository.git
-  Hauptbranch: master
-  Remote-Branch:
-    master gefolgt
-  Lokaler Branch konfiguriert für 'git pull':
-    master führt mit Remote-Branch master zusammen
-  Lokale Referenz konfiguriert für 'git push':
-    master versendet nach master (aktuell)
+...
+```
+---
+
+actualize remote(s)
+------------------------------
+
+```
+$ git remote update
+Fordere an von origin
+Fordere an von remote2
+$ git fetch --all
+Fordere an von origin
+Fordere an von remote2
+$ git fetch 
+Fordere an von origin
+```
+---
+
+avoid using 'git pull'
+----------------------
+
+git pull will update and merge any remote changes of the current branch you're on.
+
+instead use
+
+```
+$ git fetch
+$ git diff
+$ git merge
 ```
 
 ---
