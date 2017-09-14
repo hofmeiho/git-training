@@ -13,6 +13,8 @@ git-training
 
 ```
 
+---
+
 add remote and push local repository 
 --------------------------------------
 
@@ -20,8 +22,17 @@ add remote and push local repository
 
 $ git remote add origin https://path/to/git-repository.git
 $ git push -u origin master 
+
+```
+---
+
+get information about remotes 
+--------------------------------
+
 $ git remote 
 origin
+$ git config --get remote.origin.url
+https://path/to/git-repository.git
 $ git remote show origin
 * Remote-Repository origin
   URL zum Abholen: https://path/to/git-repository.git
@@ -34,5 +45,4 @@ $ git remote show origin
   Lokale Referenz konfiguriert für 'git push':
     master versendet nach master (aktuell)
 ```
-
 ---
