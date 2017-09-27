@@ -17,10 +17,13 @@ What is DVCS?
 * Centralized version control systems (CVCS) focuses on synchronizing, tracking, and backing up files.
 * Distributed version control systems (DVCS) focuses on sharing changes; every change has a guid or unique id.
 * Recording/downloading and applying a change are separate steps (in a centralized system, they happen together).
+
+---
+
 * Distributed systems have no forced structure. You can create “centrally administered” locations or keep everyone as peers.
 * DVCS new terminology
-    * Pushes refer to sending a change to another repository (permissions may be required)
-    * Pulls refer to grabbing a change from a repository
+    * **Pushes** refer to sending a change to another repository (permissions may be required)
+    * **Pulls** refer to grabbing a change from a repository
 
 --- 
 
@@ -83,7 +86,7 @@ $ git config --global user.email you@yourdomain.example.com
 
 ```
 
-(not your git credentials)  
+**(not your git credentials)**  
 
 ---
 
@@ -94,7 +97,7 @@ init new git repository
 
 $ cd /path/to/repo
 $ git init
-Initialisierte leeres Git-Repository in /path/to/repo/.git/
+Initialized empty Git repository in /path/to/repo/.git/
 
 ```
 
@@ -106,8 +109,10 @@ check status
 ```shell
 
 $ git status
-Auf Branch master
-Ihr Branch ist auf dem selben Stand wie 'origin/master'.
+On branch master
+
+No commits yet
+
 ...
 
 ```
@@ -125,16 +130,18 @@ $ # git add *
 $ git add file1 file2 file3
 $ git status
 
-Auf Branch master
+On branch master
 
-Initialer Commit
+No commits yet
 
-zum Commit vorgemerkte Änderungen:
-  (benutzen Sie "git rm --cached <Datei>..." zum Entfernen aus der Staging-Area)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
 
-	neue Datei:     file1
-    neue Datei:     file2
-    neue Datei:     file3
+        file1.c
+        file2.c
+        file3.c
+
+nothing added to commit but untracked files present (use "git add" to track)
 
 ```
 ---
@@ -211,45 +218,7 @@ $ git commit
 
 ---
 
-stashing 
-----------
 
----
-
-stash local changes
-
-```shell
-
-$ git stash
-Saved working directory and index state \
-  "WIP on master: 049d078 added the index file"
-HEAD is now at 049d078 added the index file
-(To restore them type "git stash apply")
-$ git status
-# On branch master
-nothing to commit, working directory clean
-
-```
-
----
-
-(re)apply stashes
-
-```shell
-$ git stash list
-stash@{0}: WIP on master: 049d078 added the index file
-stash@{1}: WIP on master: c264051... Revert "added file_size"
-stash@{2}: WIP on master: 21d80a5... added number to log
-$ git stash apply
-# On branch master
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#
-#      modified:   index.html
-#      modified:   lib/simplegit.rb
-#
-
-``` 
 
 
 ---
@@ -625,6 +594,47 @@ Be sure, that no one is using the 'old' history after forcing rewrite.
 
 ---
 
+stashing 
+----------
+
+---
+
+stash local changes
+
+```shell
+
+$ git stash
+Saved working directory and index state \
+  "WIP on master: 049d078 added the index file"
+HEAD is now at 049d078 added the index file
+(To restore them type "git stash apply")
+$ git status
+# On branch master
+nothing to commit, working directory clean
+
+```
+
+---
+
+(re)apply stashes
+
+```shell
+$ git stash list
+stash@{0}: WIP on master: 049d078 added the index file
+stash@{1}: WIP on master: c264051... Revert "added file_size"
+stash@{2}: WIP on master: 21d80a5... added number to log
+$ git stash apply
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#
+#      modified:   index.html
+#      modified:   lib/simplegit.rb
+#
+
+``` 
+
+---
 
 git flow vs github flow
 =========================
