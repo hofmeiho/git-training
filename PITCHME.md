@@ -7,6 +7,9 @@ What ist git?
 * the most widely used modern version control system in the world today
 * originally developed in 2005 by Linus Torvalds
 
+   "I’m an egotistical bastard, and I name all my projects after myself. First ‘Linux’, now ‘Git’."
+   ( Linus Torvalds)
+
 * Distributed Version Control System (DVCS)
 
 ---
@@ -15,12 +18,15 @@ What is DVCS?
 -------------
 
 * Centralized version control systems (CVCS) focuses on synchronizing, tracking, and backing up files.
+
 * Distributed version control systems (DVCS) focuses on sharing changes; every change has a guid or unique id.
+
 * Recording/downloading and applying a change are separate steps (in a centralized system, they happen together).
 
 ---
 
 * Distributed systems have no forced structure. You can create “centrally administered” locations or keep everyone as peers.
+
 * DVCS new terminology
     * **Pushes** refer to sending a change to another repository (permissions may be required)
     * **Pulls** refer to grabbing a change from a repository
