@@ -218,8 +218,16 @@ $ git commit
 
 ---
 
+Tags
+===========
 
+---
 
+* tag specific points in history as being important
+
+* **lightweight tag**: just a pointer to a specific commit
+
+* **annotated tag**: contains tagger name, email, date, tagging message
 
 ---
 
@@ -237,6 +245,7 @@ tag2
 $ git tag -l '*2'
 tag2
 
+$ git tag -a V1.8.5 -m "release version V 1.8.5"
 ```
 
 ---
